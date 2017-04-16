@@ -96,11 +96,8 @@
 (defn improve? [guess x]
   (average guess (/ x guess))) ; a guess is improved by averaging it with quotient of the radicand and the old guess.
 
-
-
 (= (average 3 7) 5)
 ; a Quotient in maths is the quantity produced from the division of 2 numbers.
-
 
 (defn abs [number] 
 (max number (- number))) ; define an absolute method to return positives
@@ -154,10 +151,20 @@
 
 ;; You get a stack over flow error - as Clojure uses applicative order evaluation substituting all arguments first. So you end up in an infinite loop as sqrt-iter is always called.
 
-;; Exercise 1.7.  The good-enough? test used in computing square roots will not be very effective for finding the square roots of very small numbers. Also, in real computers, arithmetic operations are almost always performed with limited precision. This makes our test inadequate for very large numbers. Explain these statements, with examples showing how the test fails for small and large numbers. An alternative strategy for implementing good-enough? is to watch how guess changes from one iteration to the next and to stop when the change is a very small fraction of the guess. Design a square-root procedure that uses this kind of end test. Does this work better for small and large numbers?
+;; Exercise 1.7.  The good-enough? test used in computing square roots will not be very effective for finding the square roots of very small numbers. Also, in real computers, arithmetic operations are almost always performed with limited precision. This makes our test inadequate for very large numbers. Explain these statements, with examples showing how the test fails for small and large numbers. An alternative strategy for implementing good-enough? is to watch how guess changes from one iteration to the next and to stop when the change is a very small fraction of the guess. Design a square-root procedure that uses this kind of end test. Does this work better for small and large numbers? 
 
 (defn good-enough-two? [guess previous-guess] 
   (< (abs (- guess previous-guess)) 0.001))
 
   (= (good-enough-two? 2 1) 1)
+
+(defn sqrt-iter-two [guess previous-guess x]
+  (if (good-enough-two? guess previous-guess)
+	guess
+	(sqrt-iter (improve guess x) guess x)))
+
+(defn sqrt-two [x]
+  (sqrt-iter-two 1.0 0 x))
+
+;;the good enough method is changed to use a previous guess, if that previous guess is within the range the function will return the value.
 

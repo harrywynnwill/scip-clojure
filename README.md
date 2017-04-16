@@ -7,29 +7,38 @@ Learning Emacs while going through the famous SCIP
 USEFUL COMMANDS IN EMACS (for me)
 
 C-x cut text
+
 C-c copy text
+
 C-v paste text
+
 C-w kill
+
 C-y yank - emacs paste 
+
 M-y yank next - go through the text saved
 
 C-x C-b view the list of open buffers in the mini buffer
+
 C-x C-a go to the beginning of a line
+
 C-x C-o swith to the next open buffer
 
-C-c 
+Enable NeoTree and use H to show hidden files/folders
 
+g to refresh 
 
-
-USEFUL CIDER COMMANDS
+##USEFUL CIDER COMMANDS
 
 Enable `cider-mode` and `cider-jack-in`
 
 C-c C-e evaluates the preceding form in the minibuffer
+
 C-x M-p prettyfy fo
+
 C-c C-k loads the current buffer into the repl
 
-NOTES
+##NOTES
 
 
 Viewing evaluation in terms of a tree, we can imagine that the values of the operands percolate upwards. Starting with the terminal nodes and then combining at higher and higher levels.
@@ -81,9 +90,17 @@ mathmatical functions do not describe the procedure - it tells us almost nothing
 Newtons method - procedural method using successive approximations.
 
 whenever we perform a guess for `y` for the value of square root `x`, we can perform a simple manipulation to get a better guess.
-(
 
 
+The square root problem breaks up naturally into a number of subproblems. 1. How to tell whether a guess is good enough. 2. how to improve. Each of these tasks is accomplished by a seperate procedure. Each procedure accomplishes an identifable task.
+
+We are not concerned with how the procedure computes the square result, only with the fact it computes the square.
+
+good-enough? is not concerned about square. square is a procedural abstraction. At this level of abstraction any procedure that computes the square is equally good.
+
+so a procedure definition should be able to supress detail. A user should not need to know how the procedure is implemented in order to use it.
+
+procedure names should be independent of the parameter name  
 
 
 
