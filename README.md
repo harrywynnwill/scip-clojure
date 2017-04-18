@@ -7,14 +7,19 @@ Learning Emacs while going through the famous SCIP
 I'm taking notes but mainly as a learning aid - so in most parts it probably reads like garbage.
 
 EMACS Stuff (for me)
+
 //TODO
+
 * Learn Paredit.
+
+* Add markdown preview
 
 Emacs is all about key bindings. Read further into it to learn more... The tutorial on Emacs and the start of Clojure for the brave and true is where I have started reading.
 
 I'm using a Mac. ctrl and alt are the two most important keys in emacs. On a Mac alt + 3 is how you get a '#'. In Emacs it translates to meta + 3 which does not equal '#'. To get round this, add this to your init.el file.
 
-```;; Allow hash to be entered  
+```
+;; Allow hash to be entered  
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
 ```
 
@@ -29,8 +34,9 @@ I'm using a Mac. ctrl and alt are the two most important keys in emacs. On a Mac
 
 I'm going to give http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell.html a go. It seems to correct words on-the-fly. I'm probably not gonna re-read this, so its a good solution.
 
-add this to your .init.el
+install the package.
 
+add this to your .init.
 
 ```
 ;;Add flyspell on-the-fly spelling...
@@ -39,6 +45,7 @@ add this to your .init.el
 (autoload 'tex-mode-flyspell-verify "flyspell" "" t) 
 
 ```
+bads spell
 
 The documenation recommends aspell
 
