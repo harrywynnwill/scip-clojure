@@ -7,6 +7,8 @@ Learning Emacs while going through the famous SCIP
 I'm taking notes but mainly as a learning aid - so in most parts it probably reads like garbage.
 
 EMACS Stuff (for me)
+//TODO
+* Learn Paredit.
 
 Emacs is all about key bindings. Read further into it to learn more... The tutorial on Emacs and the start of Clojure for the brave and true is where I have started reading.
 
@@ -16,10 +18,27 @@ I'm using a Mac. ctrl and alt are the two most important keys in emacs. On a Mac
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
 ```
 
+`Variable binding depth exceeds max-specpdl-size` in elisp I think means stackoverflow a recursive call to nowhere.
 
 # Adding a spellcheck to Emacs (only as I'm posting to GitHub)
 
+
+
 # MarkDown preview to see it as it is on Github.
+
+
+I'm going to give http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell.html a go. It seems to correct words on-the-fly. I'm probably not gonna re-read this, so its a good solution.
+
+add this to your .init.el
+
+
+```
+;;Add flyspell on-the-fly spelling...
+(autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
+(autoload 'flyspell-delay-command "flyspell" "Delay on command." t)
+(autoload 'tex-mode-flyspell-verify "flyspell" "" t) 
+
+```
 
 The documenation recommends aspell
 
