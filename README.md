@@ -4,7 +4,19 @@ Killing 2 birds with one stone.
 
 Learning Emacs while going through the famous SCIP
 
-USEFUL COMMANDS IN EMACS (for me)
+I'm taking notes but mainly as a learning aid - so in most parts it probably reads like garbage.
+
+EMACS Stuff (for me)
+
+Emacs is all about key bindings. Read further into it to learn more... The tutorial on Emacs and the start of Clojure for the brave and true is where I have started reading.
+
+I'm using a Mac. ctrl and alt are the two most important keys in emacs. On a Mac alt + 3 is how you get a '#'. In Emacs it translates to meta + 3 which does not equal '#'. To get round this, add this to your init.el file.
+
+```;; Allow hash to be entered  
+(global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))```
+
+
+If using a mac
 
 C-x cut text
 
@@ -28,7 +40,7 @@ Enable NeoTree and use H to show hidden files/folders
 
 g to refresh 
 
-##USEFUL CIDER COMMANDS
+## USEFUL CIDER COMMANDS
 
 Enable `cider-mode` and `cider-jack-in`
 
@@ -38,7 +50,7 @@ C-x M-p prettyfy fo
 
 C-c C-k loads the current buffer into the repl
 
-##NOTES
+## NOTES
 
 
 Viewing evaluation in terms of a tree, we can imagine that the values of the operands percolate upwards. Starting with the terminal nodes and then combining at higher and higher levels.
@@ -64,24 +76,24 @@ Substitution model for procedure application is described below
 
 normal-order evalutaion "fully expand and then reduce"
 Instead it would first substitute operand expressions for parameters until it obtained an expression involving only primitive operators, and would then perform the evaluation.
-
+```
 (sum-of-squares (+ 5 1) (* 5 2))
 
 (+    (square (+ 5 1))      (square (* 5 2))  )
 
 (+    (* (+ 5 1) (+ 5 1))   (* (* 5 2) (* 5 2)))
+```
 
-
-(+ 5 1) is passed through until only primitive operands are left and then it is evaluated/
+`(+ 5 1)` is passed through until only primitive operands are left and then it is evaluated/
 
 mathematical functions and computer procedures are different.
 
 e.g. pseudo mathematical function for square root...
-
+```
 (define (sqrt x)
   (the y (and (>= y 0)
               (= (square y) x))))
-
+```
 mathmatical functions do not describe the procedure - it tells us almost nothing about how to actually get the square root of a number.
 
 (mathematical) functions describe property of things - declative
