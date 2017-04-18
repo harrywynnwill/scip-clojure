@@ -1,4 +1,4 @@
-# scip-in-clojure
+# scip-in-clojure *a work in progress
 
 Killing 2 birds with one stone.
 
@@ -13,10 +13,15 @@ Emacs is all about key bindings. Read further into it to learn more... The tutor
 I'm using a Mac. ctrl and alt are the two most important keys in emacs. On a Mac alt + 3 is how you get a '#'. In Emacs it translates to meta + 3 which does not equal '#'. To get round this, add this to your init.el file.
 
 ```;; Allow hash to be entered  
-(global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))```
+(global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
+```
 
 
-If using a mac
+# Adding a spellcheck to Emacs (only as I'm posting to GitHub)
+
+# MarkDown preview to see it as it is on Github.
+
+The documenation recommends aspell
 
 C-x cut text
 
